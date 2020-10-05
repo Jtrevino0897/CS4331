@@ -36,3 +36,13 @@ Cans - https://sketchfab.com/3d-models/soda-can-props-low-poly-free-44c888130b7d
 Spiderman - https://sketchfab.com/3d-models/spiderman-original-2ed06987d6204854a7fe133684cb66e3
 
 Spongebob - https://sketchfab.com/3d-models/sponge-bob-54381dae288f44c1a0ab80dffae3389f
+
+Couch - https://poly.google.com/view/7Q_Ab2HLll1
+
+Fridge - https://sketchfab.com/3d-models/fridge-2e6576fae0ea4034b09cd48722feb9a7
+
+microwave - https://poly.google.com/view/0YYExMzwX0V
+
+Stove - https://sketchfab.com/3d-models/stove-11ec73f295a6445d93b6a212aacc021b
+
+TV - https://sketchfab.com/3d-models/led-tv-014e75456b4e465b9cecd1b136a0312b
