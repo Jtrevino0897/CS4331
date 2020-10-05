@@ -1,0 +1,650 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+    <script src="libs/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v1.14.0/dist/aframe-extras.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@^4.0.0/dist/aframe-event-set-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-animation-component@^4.1.2/dist/aframe-animation-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-extras@3.30.0aa/dist/aframe-extras.min.js"></script>
+    <script src="aframe-animation-component.min.js"></script>
+    <script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
+    <script src="https://cdn.rawgit.com/zcanter/aframe-gradient-sky/master/dist/gradientsky.min.js"></script>
+    <script src="https://rawgit.com/rdub80/aframe-gui/master/dist/aframe-gui.min.js"></script>
+    <script src="https://unpkg.com/aframe-csg-meshs/index.js">
+    </script>
+  
+  
+  </head>
+  
+  
+  <body>
+    
+    
+    <a-scene antialias="true">
+      
+      
+      <a-assets>
+        <img
+             id="grass"
+             src="https://cdn.glitch.com/60055b0c-41c5-49c8-805c-da359f1c3f99%2Fgrass.jpg?1519297817380"
+             />
+        <img
+             id="wood"
+             src="https://cdn.glitch.com/058f0cd6-6926-40b0-819b-6c631360a93e%2Fwall.jpg?v=1601667447936"
+             />
+        <img
+             id="book"
+             src="https://cdn.glitch.com/058f0cd6-6926-40b0-819b-6c631360a93e%2Fbookstand.jpg?v=1601804562143"
+             />
+        <img id="floor" src="https://cdn.glitch.com/c388f728-37b7-4af9-af03-1ee7430663e7%2F4727356277_66fb5f938f_o.jpg?1544178281422"/>
+        
+        <img  
+        id="cel"
+        src="https://cdn.glitch.com/058f0cd6-6926-40b0-819b-6c631360a93e%2Fceiline.jpg?v=1601667736115"
+      />
+        <img
+        id="walltext"
+        src="https://cdn.glitch.com/058f0cd6-6926-40b0-819b-6c631360a93e%2F2c3e4b5d02556650294e3aba3aec5023--concrete-texture-seamless-concrete-wall-texture.jpg?v=1601752739451"
+      />
+        <img
+        id="carpet"
+        src="https://cdn.glitch.com/058f0cd6-6926-40b0-819b-6c631360a93e%2F6f0b66e9872d5b905563e1936dd8a5c3.jpg?v=1601783835790"
+      />
+    </a-assets>
+      
+
+
+      
+  
+    
+      <!--sky-->
+      <a-sky
+             geometry="radius:100; thetaLength:100;"
+             material="shader:gradient; topColor:52 112 251; bottomColor:123 179 220; offset:0;"
+             ></a-sky> 
+
+    
+
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    <a-plane
+      class="hasEvent"
+      position="6.407 0.058 2.517"
+      rotation="-90 0"
+      geometry="width: 6.7; height: 11"
+      material="repeat: 14 14; src:#carpet; color:#5f5f5f;shader: flat"
+    ></a-plane>
+    <a-plane
+      class="hasEvent"
+      position="6.419 4 2.517"
+      rotation="90 0"
+      geometry="height: 11; width: 6.7"
+      material="repeat: 5 5;roughness:1;  src:#cel"
+    ></a-plane>
+    <a-plane
+      class="hasEvent"
+      position="1.92886 0.36384 6.89827"
+      rotation="-90.00021045914971 37.56998854231835"
+      geometry="primitive: box; width: 1.5; depth: 0.05; height: 0.78"
+      material="src:#floor; color: #1a1a1a"
+    ></a-plane>
+    <a-plane
+      class="hasEvent"
+      position="2.72875 0.44995 6.72043"
+      rotation="-90.00021045914971 37.56998854231835"
+      geometry="primitive: box; width: 0.05; depth: 0.85; height: 0.059"
+      material="src:#floor; color: #ffffff"
+    ></a-plane>
+    <a-plane
+      class="hasEvent"
+      position="2.28971 0.46491 6.1587"
+      rotation="-89.99963750135457 -49.75794676034121"
+      geometry="primitive: box; width: 0.05; depth: 0.85; height: 0.059"
+      material="src:#floor; color: #ffffff"
+    ></a-plane>
+    <a-plane
+      class="hasEvent"
+      position="1.12637 0.48494 7.04992"
+      rotation="-89.99963750135457 -49.75794676034121"
+      geometry="primitive: box; width: 0.05; depth: 0.85; height: 0.059"
+      material="src:#floor; color: #ffffff"
+    ></a-plane>
+    <a-plane
+      class="hasEvent"
+      position="1.58365 0.47189 7.65371"
+      rotation="-89.99963750135457 -49.75794676034121"
+      geometry="primitive: box; width: 0.05; depth: 0.85; height: 0.059"
+      material="src:#floor; color: #ffffff"
+    ></a-plane>
+    <a-plane
+      class="hasEvent"
+      position="1.92886 0.83144 6.89827"
+      rotation="-90.00021045914971 37.56998854231835"
+      geometry="primitive: box; width: 1.5; depth: 0.1; height: 0.78"
+      material="src:#floor; color: #000000"
+    ></a-plane>
+    <a-plane
+      class="hasEvent"
+      position="1.92886 0.92653 6.89827"
+      rotation="-90.00021045914971 37.56998854231834"
+      geometry="primitive: box; width: 1.75; depth: 0.1"
+      material="repeat: 1 1; src:#floor"
+    ></a-plane>
+    <a-plane
+      class="hasEvent"
+      position="0 0 0"
+      rotation="-90 0 0"
+      geometry="width:40; height:40;"
+      material="src:#grass; repeat:111 111;shader: flat"
+    ></a-plane>
+    <a-plane
+      class="hasEvent"
+      position="-0.277 0.058 2.517"
+      rotation="-90 0 0"
+      geometry="width:6.7;height:11"
+      material="repeat:14 14;src:#carpet; color:#5f5f5f;shader: flat"
+    ></a-plane>
+    <a-plane
+      class="hasEvent"
+      position="-0.277 4 2.517"
+      rotation="90 0"
+      geometry="height: 11; width: 6.7"
+      material="repeat: 5 5;roughness:1; src: #cel"
+    ></a-plane>
+    <a-plane
+      class="hasEvent"
+      position="6.82529 0.46491 3.34084"
+      rotation="-89.99963750135457 -49.75794676034121"
+      geometry="primitive: box; width: 0.1; depth: 2; height: 0.1"
+      material="src:#floor; color: #ffffff"
+    ></a-plane>
+    <a-plane
+      class="hasEvent"
+      position="6.48285 1.40164 4.07057"
+      rotation="180 9"
+      geometry="primitive: cylinder; height: 0.15"
+      material="src:#floor;shader: flat"
+    ></a-plane>
+    <a-plane
+      class="hasEvent"
+      position="5.88252 0.46491 3.52593"
+      rotation="-89.99963750135457 -49.75794676034121"
+      geometry="primitive: box; width: 0.1; depth: 2; height: 0.1"
+      material="src:#floor; color: #ffffff"
+    ></a-plane>
+    <a-plane
+      class="hasEvent"
+      position="7.11515 0.45702 4.60963"
+      rotation="-89.99963750135457 -49.75794676034121"
+      geometry="primitive: box; width: 0.1; depth: 2; height: 0.1"
+      material="src:#floor ; color: #ffffff"
+    ></a-plane>
+    <a-plane
+      class="hasEvent"
+      position="5.80717 0.46491 4.62728"
+      rotation="-89.99963750135457 -49.75794676034121"
+      geometry="primitive: box; width: 0.1; depth: 2; height: 0.1"
+      material="src:#floor; color: #ffffff"
+    ></a-plane>
+    <a-plane
+      class="hasEvent"
+      position="5.80717 0.46491 4.62728"
+      rotation="-89.99963750135457 -49.75794676034121"
+      geometry="primitive: box; width: 0.1; depth: 2; height: 0.1"
+      material="src:#book"
+    ></a-plane>
+    <a-plane
+      class="hasEvent"
+      position="-3 1.52721 3.46728"
+      rotation="-89.99963750135457 -90 0"
+      geometry="primitive: box; width: 0.1; depth: 3; height: 1.2"
+      material="src: #book"
+    ></a-plane>
+    <a-plane
+      class="hasEvent"
+      position="-3.00723 1.52 5.25009"
+      rotation="-89.99963750135457 -90 0"
+      geometry="primitive: box; width: 0.1; depth: 3; height: 1.2"
+      material="src: #book"
+    ></a-plane>
+    <a-plane
+      class="hasEvent"
+      position="-3.05409 2.97987 4.39014"
+      rotation="-0.0813600069085769 -179.9998479605043 -90.00021045914971"
+      geometry="primitive: box; width: 0.1; depth: 1.75; height: 1.3"
+      material="src: #book"
+    ></a-plane>
+    <a-plane
+      class="hasEvent"
+      position="-3.07387 2.00361 4.3312"
+      rotation="0 -179.9998479605043 -90.00021045914971"
+      geometry="primitive: box; width: 0.1; depth: 1.75; height: 1.3"
+      material="src: #book"
+    ></a-plane>
+    <a-plane
+      class="hasEvent"
+      position="-3.10758 0.93338 4.34741"
+      rotation="0 -180 90"
+      geometry="primitive: box; width: 0.1; depth: 1.75; height: 1.3"
+      material="src: #book"
+    ></a-plane>
+    <a-plane
+      class="hasEvent"
+      position="5.34804 0.06243 6.34004"
+      rotation="-89.99963750135457 -90 0"
+      geometry="primitive: box; width: 0.12; depth: 3; height: 1.3"
+      material="src: #book"
+    ></a-plane>
+    <a-plane
+      class="hasEvent"
+      position="5.35691 1.4751 7.28683"
+      rotation="0 0 90.00021045914971"
+      geometry="primitive: box; width: 0.1; depth: 1.75; height: 1.3"
+      material="src: #book"
+    ></a-plane>
+
+    <a-gltf-model
+      id="BP"
+      position="2.7056 0.5 4.49962"
+      rotation="0 90"
+      src="https://cdn.glitch.com/058f0cd6-6926-40b0-819b-6c631360a93e%2FoutBP.glb?v=1601666416769"
+      gltf-model="https://cdn.glitch.com/058f0cd6-6926-40b0-819b-6c631360a93e%2FoutBP.glb?v=1601666416769"
+      scale="1 1 1"
+    ></a-gltf-model>
+    <a-gltf-model
+      id="mask"
+      position="-0.55268 1.286 -2.71006"
+      rotation="0 90"
+      src="https://cdn.glitch.com/058f0cd6-6926-40b0-819b-6c631360a93e%2Foutmask.glb?v=1601664732711"
+      gltf-model="https://cdn.glitch.com/058f0cd6-6926-40b0-819b-6c631360a93e%2Foutmask.glb?v=1601664732711"
+      scale="0.01 0.01 0.01"
+    ></a-gltf-model>
+    <a-gltf-model
+      id="table"
+      position="-1.59606 0.64 -2.56766"
+      rotation="0 90"
+      src="https://cdn.glitch.com/058f0cd6-6926-40b0-819b-6c631360a93e%2Fout.glb?v=1601504496388"
+      gltf-model="https://cdn.glitch.com/058f0cd6-6926-40b0-819b-6c631360a93e%2Fout.glb?v=1601504496388"
+      scale="0.075 0.1 0.075"
+    ></a-gltf-model>
+    <a-gltf-model
+      id="couch"
+      position="5.95676 5.0093 3.03903"
+      rotation="0 -90"
+      src="https://cdn.glitch.com/058f0cd6-6926-40b0-819b-6c631360a93e%2Foutcouch.glb?v=1601795763400"
+      gltf-model="https://cdn.glitch.com/058f0cd6-6926-40b0-819b-6c631360a93e%2Foutcouch.glb?v=1601795763400"
+      scale="3 3 3"
+    ></a-gltf-model>
+    <a-gltf-model
+      id="chair"
+      position="7.08664 0.73593 4"
+      rotation="0 90.03"
+      src="https://cdn.glitch.com/058f0cd6-6926-40b0-819b-6c631360a93e%2Foutchair.glb?v=1601797249297"
+      gltf-model="https://cdn.glitch.com/058f0cd6-6926-40b0-819b-6c631360a93e%2Foutchair.glb?v=1601797249297"
+      scale="0.005 0.005 0.005"
+    ></a-gltf-model>
+    <a-gltf-model
+      id="chair-2"
+      position="-1.06369 0.86252 -1.62895"
+      rotation="0 145.00473174950386"
+      src="https://cdn.glitch.com/058f0cd6-6926-40b0-819b-6c631360a93e%2Foutchair.glb?v=1601797249297"
+      gltf-model="https://cdn.glitch.com/058f0cd6-6926-40b0-819b-6c631360a93e%2Foutchair.glb?v=1601797249297"
+      scale="-0.005 0.005 -0.005"
+    ></a-gltf-model>
+    <a-gltf-model
+      id="chair-3"
+      position="5.56876 0.73593 4"
+      rotation="0 90.03"
+      src="https://cdn.glitch.com/058f0cd6-6926-40b0-819b-6c631360a93e%2Foutchair.glb?v=1601797249297"
+      gltf-model="https://cdn.glitch.com/058f0cd6-6926-40b0-819b-6c631360a93e%2Foutchair.glb?v=1601797249297"
+      scale="0.005 0.005 -0.005"
+    ></a-gltf-model>
+    <a-gltf-model
+      id="chair-4"
+      position="6.36258 0.73593 3.50058"
+      rotation="0 2.5467973993565094"
+      src="https://cdn.glitch.com/058f0cd6-6926-40b0-819b-6c631360a93e%2Foutchair.glb?v=1601797249297"
+      gltf-model="https://cdn.glitch.com/058f0cd6-6926-40b0-819b-6c631360a93e%2Foutchair.glb?v=1601797249297"
+      scale="0.005 0.005 -0.005"
+    ></a-gltf-model>
+    <a-gltf-model
+      id="chair-5"
+      position="6.36258 0.73593 4.51761"
+      rotation="0 -180"
+      src="https://cdn.glitch.com/058f0cd6-6926-40b0-819b-6c631360a93e%2Foutchair.glb?v=1601797249297"
+      gltf-model="https://cdn.glitch.com/058f0cd6-6926-40b0-819b-6c631360a93e%2Foutchair.glb?v=1601797249297"
+      scale="0.005 0.005 -0.005"
+    ></a-gltf-model>
+    <a-gltf-model
+      id="fridge"
+      position="3.87662 1.70865 7.15908"
+      rotation="0 89.56934619721133 0"
+      src="https://cdn.glitch.com/058f0cd6-6926-40b0-819b-6c631360a93e%2Foutfridge.glb?v=1601804997203"
+      gltf-model="https://cdn.glitch.com/058f0cd6-6926-40b0-819b-6c631360a93e%2Foutfridge.glb?v=1601804997203"
+      scale="0.45 0.45 0.45"
+    ></a-gltf-model>
+    <a-gltf-model
+      id="microwave"
+      position="5.20205 1.56024 7.40357"
+      rotation="0 145.00473174950386 0"
+      src="https://cdn.glitch.com/058f0cd6-6926-40b0-819b-6c631360a93e%2Foutmicro.glb?v=1601804996306"
+      gltf-model="https://cdn.glitch.com/058f0cd6-6926-40b0-819b-6c631360a93e%2Foutmicro.glb?v=1601804996306"
+      scale="0.025 0.025 0.025"
+    ></a-gltf-model>
+    <a-gltf-model
+      id="tv"
+      position="1.88764 0.94405 6.79012"
+      rotation="0 -141.39280580899916 0"
+      src="https://cdn.glitch.com/058f0cd6-6926-40b0-819b-6c631360a93e%2Fouttv.glb?v=1601804996580"
+      gltf-model="https://cdn.glitch.com/058f0cd6-6926-40b0-819b-6c631360a93e%2Fouttv.glb?v=1601804996580"
+      scale="0.15 0.15 0.15"
+    ></a-gltf-model>
+    <a-gltf-model
+      id="computer"
+      position="-1.21038 1.326 -2.79846"
+      rotation=""
+      src="https://cdn.glitch.com/058f0cd6-6926-40b0-819b-6c631360a93e%2Foutcomputer.glb?v=1601807530346"
+      gltf-model="https://cdn.glitch.com/058f0cd6-6926-40b0-819b-6c631360a93e%2Foutcomputer.glb?v=1601807530346"
+      scale=""
+    ></a-gltf-model>
+    <a-gltf-model
+      id="bed"
+      position="1.51429 -4.91763 8.19863"
+      rotation="0 140.9080835143185 0"
+      src="https://cdn.glitch.com/058f0cd6-6926-40b0-819b-6c631360a93e%2Fout(3).glb?v=1601808815585"
+      gltf-model="https://cdn.glitch.com/058f0cd6-6926-40b0-819b-6c631360a93e%2Fout(3).glb?v=1601808815585"
+      scale="4 4 4"
+    ></a-gltf-model>
+
+    <a-gltf-model
+      id="stove"
+      position="38.79761 0 19.98645"
+      rotation="0 -180 0"
+      src="https://cdn.glitch.com/058f0cd6-6926-40b0-819b-6c631360a93e%2Foutstove.glb?v=1601804996667"
+      gltf-model="https://cdn.glitch.com/058f0cd6-6926-40b0-819b-6c631360a93e%2Foutstove.glb?v=1601804996667"
+      scale="0.55 0.55 0.55"
+    ></a-gltf-model>
+      
+      
+    <a-gltf-model
+      id="books"
+      position="-8.48 -3.42 9.349"
+      rotation="0 -180 0"
+      src="https://cdn.glitch.com/058f0cd6-6926-40b0-819b-6c631360a93e%2Foutbook.glb?v=1601862173035"
+      gltf-model="https://cdn.glitch.com/058f0cd6-6926-40b0-819b-6c631360a93e%2Foutbook.glb?v=1601862173035"
+      scale="0.025 0.025 0.025"
+    ></a-gltf-model>
+      
+      <a-gltf-model
+      id="spidey"
+      position="8.87827 0.05007 4.14834" rotation="0 -107.21644628724069 0" 
+      src="https://cdn.glitch.com/058f0cd6-6926-40b0-819b-6c631360a93e%2Foutspider.glb?v=1601863425347"
+      gltf-model="https://cdn.glitch.com/058f0cd6-6926-40b0-819b-6c631360a93e%2Foutspider.glb?v=1601863425347"
+      scale="0.012 0.013 0.01"
+    ></a-gltf-model>
+     
+      <a-gltf-model                    
+      id="bob"
+      position="4.52855 1.22116 2.3986" rotation="-180 180 180" 
+      src="https://cdn.glitch.com/058f0cd6-6926-40b0-819b-6c631360a93e%2Foutbob.glb?v=1601863778451"
+      gltf-model="https://cdn.glitch.com/058f0cd6-6926-40b0-819b-6c631360a93e%2Foutbob.glb?v=1601863778451"
+      scale="0.001 0.0015 0.001"
+    ></a-gltf-model>
+      
+       <a-gltf-model                    
+      id="bottles"
+      position="6.48285 1.46677 4.07057" rotation="-180 180 180" 
+      src="https://cdn.glitch.com/058f0cd6-6926-40b0-819b-6c631360a93e%2Fout(5).glb?v=1601866465430"
+      gltf-model="https://cdn.glitch.com/058f0cd6-6926-40b0-819b-6c631360a93e%2Fout(5).glb?v=1601866465430"
+      scale="0.5 0.5 0.5"
+    ></a-gltf-model>
+      
+      <a-gltf-model
+      id="cube"
+      position="-2.95 2.3143 4.69259"
+      rotation="-32.05928046875008 -69.0356847353129 -45.62004556390641"
+      src="https://cdn.glitch.com/058f0cd6-6926-40b0-819b-6c631360a93e%2Foutcube.glb?v=1601861164498"
+      gltf-model="https://cdn.glitch.com/058f0cd6-6926-40b0-819b-6c631360a93e%2Foutcube.glb?v=1601861164498"
+      scale="0.05 0.05 0.05">
+      <a-animation attribute ="rotation"
+                   to="0 360 0"
+                   repeat="indefinite"
+                   dur="5000"
+                   easing="linear">
+      </a-animation>
+     
+    </a-gltf-model>
+    <!-- walls -->
+    
+    <a-box
+      class="wall"
+      id="w0003-4"
+      position="6.48846 2 8"
+      geometry="width: 6.8; height: 4; depth: 0.1"
+      shadow
+      csg-meshs="subtract: #window"
+      material="src:#walltext"
+    >
+    </a-box>
+    <a-box
+      class="wall"
+      id="window"
+      position="6.33662 2.29674 -3.13166"
+      geometry="width: 4; height: 2; depth: 0.4"
+      color="#EF2D5E"
+      material="transparent: true; opacity: 0.001"
+    ></a-box>
+    <a-box
+      class="wall"
+      id="w0006-3"
+      position="9.79977 2 2.517"
+      rotation="0 -90"
+      geometry="width: 11; height: 4; depth: 0.1"
+      material="repeat: 2 1; src:#walltext"
+    ></a-box>
+    <a-box
+      class="wall"
+      id="w0001"
+      position="3 2 4.3364"
+      rotation="0 -90.01166961505233"
+      geometry="width: 7.5; height: 4; depth: 0.1"
+      material="repeat: 2 1; src:#walltext"
+    ></a-box>
+    <a-box
+      class="wall"
+      id="w0006"
+      position="-3.6 2 2.517"
+      rotation="0 -90 0"
+      geometry="width:11;height:4;depth:0.1"
+      material="repeat:2 1;src:#walltext	"
+    ></a-box>
+    <a-box
+      class="wall"
+      id="w0003"
+      position="-0.301 2 8"
+      geometry="width:6.8;height:4;depth:0.1"
+      scale="-1 1 1"
+      material="repeat:2 1;roughness:1;src:#walltext"
+    ></a-box>
+    <a-box
+      class="wall"
+      id="w0005"
+      position="3 2 -2"
+      rotation="0 -90 0"
+      geometry="depth:0.1;height:4;width:2"
+      material="repeat:2 4;src:#walltext"
+    ></a-box>
+    <a-box
+      class="wall"
+      id="w0003-3"
+      position="-0.31 2 -3"
+      geometry="width: 6.8; height: 4; depth: 0.1"
+      material="repeat: 2 1; src:#walltext"
+    ></a-box>
+    <a-box
+      class="wall"
+      id="w0003-6"
+      position="6.48846 2 -3.0"
+      geometry="width: 6.8; height: 4; depth: 0.1"
+      shadow=""
+      csg-meshs="subtract: #window"
+      material="src: #walltext"
+    >
+    </a-box>
+    
+
+
+      
+
+      <a-entity id="door"  position="2.98455 -0.31345 -2.02617">
+  <a-box position="0.02 2.01322 1.80811" rotation="" scale="0.1 1 1" geometry="depth:2;width:0.35;height:4" src="https://cdn.glitch.com/058f0cd6-6926-40b0-819b-6c631360a93e%2Fdoor.jpg?v=1601802984674" material=""></a-box>
+            </a-entity>
+      
+      
+      <a-plane id="blinds" color="#000000" material="transparent: true; opacity: 0.5" position="6.33662 2.29674 -2.9" class="ui"
+               event-set__scale="_target: #blinds; _event: click;
+                               animation.property: scale;
+                               animation.easing: easeInOutBack
+
+                               "
+             event-set__position="_target: #blinds; _event: click;
+                                  animation.property: position;
+                                  animation.to: 6.33662 4 -2.9
+                                  animation.to: 2.91832 1.90051 1.33613"
+               geometry="width: 4; height: 2; depth: 0.4">
+      
+      </a-plane>
+      <a-box id="openblinds" color="#FFFFFF" position="3.38927 1.90051 -2.991" class="ui"
+             animation__enter="property: material.color; from: #FFFFFF; to: #FF7700;
+                               startEvents: mouseenter; dur: 250; easing: linear"
+             animation__leave="property: material.color; from: #FF7700; to:#FFFFFF;
+                               startEvents: mouseleave; dur: 250; easing: linear"
+             event-set__scale="_target: #blinds; _event: click;
+                               animation.property: scale;
+                               
+                               animation.easing: easeInOutBack;
+                               "
+             event-set__position="_target: #blinds; _event: click;
+                                  animation.property: position;
+                                  animation.to: 6.33662 4 -2.9
+                                  animation.to: 2.91832 1.90051 1.33613"
+             geometry="depth:0.25;height:0.25;width:0.18">
+             
+
+      </a-box>
+      
+      <a-box id="closeblinds" color="#333333" position="3.95712 1.90051 -2.991" class="ui"
+               animation__enter="property: material.color; from: #333333; to: #FFAAAA;
+                                 startEvents: mouseenter; dur: 250; easing: linear"
+               animation__leave="property: material.color; from: #FFAAAA; to:#333333;
+                                 startEvents: mouseleave; dur: 250; easing: linear"
+               event-set__scale="_target: #blinds; _event: click;
+                                 animation.to 1 1 1;
+                                 animation.easing: easeOutExpo;"
+               event-set__position="_target: #blinds; _event: click;
+                                    animation.to: 6.33662 2.29674 -2.9"              
+             geometry="depth:0.25;height:0.25;width:0.18"></a-box>
+      
+      
+      <!--open door-->
+      <a-box id="red" color="#AA0000" position="2.91832 1.90051 1.33613" class="ui"
+             animation__enter="property: material.color; from: #AA0000; to: #FF7700;
+                               startEvents: mouseenter; dur: 250; easing: linear"
+             animation__leave="property: material.color; from: #FF7700; to:#AA0000;
+                               startEvents: mouseleave; dur: 250; easing: linear"
+             event-set__scale="_target: #red; _event: click;
+                               animation.property: scale;
+                               
+                               animation.easing: easeInOutBack;
+                               "
+             event-set__position="_target: #door; _event: click;
+                                  animation.property: position;
+                                  animation.to: 3 0 -3.8
+                                  animation.to: 2.91832 1.90051 1.33613"
+             geometry="depth:0.5;height:0.5;width:0.18">
+             
+
+      </a-box>
+      
+      <a-box id="close" color="#333333" position="2.91832 1.90051 2.12" class="ui"
+               animation__enter="property: material.color; from: #333333; to: #FFAAAA;
+                                 startEvents: mouseenter; dur: 250; easing: linear"
+               animation__leave="property: material.color; from: #FFAAAA; to:#333333;
+                                 startEvents: mouseleave; dur: 250; easing: linear"
+               event-set__scale="_target: #door; _event: click;
+                                 animation.to 1 1 1;
+                                 animation.easing: easeOutExpo;"
+               event-set__position="_target: #door; _event: click;
+                                    animation.to: 2.98455 -0.31345 -2.02617"              
+             geometry="depth:0.5;height:0.5;width:0.18"></a-box>
+      
+
+      
+      <a-entity id="floorlight" light="type: ambient; color: #ffffff; intensity: .4"></a-entity>
+
+      <a-light id="roomlight" type="point" position="-0.27 3.172 2.5" light="distance:4; color:#FFFFFF;intensity:2.15"></a-light>
+      <a-light id="kitchenlight1" type="point" position="6.768 3.574 2.5" light="distance:4; color:#FFFFFF;intensity:2.15"></a-light>
+      <a-light id="kitchenlight2" type="point" position="6.768 3.949 6.644" light="distance:4; color:#FFFFFF;intensity:2.15"></a-light>
+          
+      <a-sphere id="lightcover" color="white" position="-0.27 4.1 2.5" radius=".5" material="transparent: true; opacity: 0.5"></a-sphere>
+      <a-sphere id="lightcover2" color="white" position="6.768 4.064 2.5" radius=".5" material="transparent: true; opacity: 0.5"></a-sphere>
+      <a-sphere id="lightcover3" color="white" position="6.765 4.064 7.32" radius=".5" material="transparent: true; opacity: 0.5"></a-sphere>
+      
+    <a-box color="red" position="3.190 1.901 2.549" scale="0.335 0.335 0.335" class="ui"
+           event-set__1="_event: click; _target: #floorlight; color: red;"
+           event-set__2="_event: click; _target: #kitchenlight1; color: red;"
+           event-set__3="_event: click; _target: #kitchenlight2; color: red;"></a-box>
+        <!---BLUE--->
+    <a-box color="blue" position="0.901 1.901 -2.985" scale="0.335 0.335 0.335" class="ui"
+           event-set__1="_event: click; _target: #roomlight; color: blue;"></a-box>
+        <!---GREEN--->
+    <a-box color="orange" position="1.575 1.901 -2.982" scale="0.335 0.335 0.335" class="ui"
+        event-set__1="_event: click; _target: #roomlight; color: orange;"></a-box>
+        <!---WHITE--->
+    <a-box color="white" position="3.188 1.901 3.156" scale="0.335 0.335 0.335" class="ui"
+           event-set__1="_event: click; _target: #kitchenlight1; color: #fffffb; "
+           event-set__2="_event: click; _target: #kitchenlight2; color: #fffffb;"></a-box>
+      <a-box color="white" position="0.30 1.901 -2.985" scale="0.335 0.335 0.335" class="ui"
+           event-set__1="_event: click; _target: #roomlight; color: #fffffb;"></a-box>
+      
+      
+
+      
+<a-text value="Project 1 Jose Trevino" position="-1.70106 3.27504 -2.71598" text=""></a-text>
+      
+<a-text value="Open " position="2.91832 2.3344 1.04058" text="value:Open" rotation="0 -90 0"></a-text>
+
+<a-text value="Close " position="2.91832 2.31772 1.83904" text="value:Close" rotation="0 -90 0"></a-text>
+
+<a-text value="Change the light color" position="-1.22851 2.568 -2.71322" text=""></a-text>
+
+<a-text value="Change the light color" position="3.0761 2.30497 3.79631" text="" rotation="0 90 0"></a-text>
+      
+<a-text value="UP   DOWN" position="3.17857 2.168 -2.91998" text=""></a-text>
+      
+      
+      
+      
+
+         
+     <a-entity position="0 0 2">
+        <a-camera>
+          <a-cursor raycaster="objects: .ui"></a-cursor>
+                </a-camera>
+      </a-entity>
+  </a-scene>
+
+  </body>
+
+</html>
