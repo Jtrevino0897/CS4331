@@ -21,6 +21,10 @@ I included an animated rubik's cube as well on a bookshelve made.
 Kitchen/Living Room
 ![](images/kitchen.JPG)
 
+![](images/kitchen2.JPG)
+
+Window with interactable blind
+![](images/window.JPG)
 
 
 Resources:
